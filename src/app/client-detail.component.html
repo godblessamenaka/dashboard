@@ -1,0 +1,153 @@
+<div class="client-details" *ngIf="client">
+  <div class="row detail-section">
+	<div class="col-md-6">
+		<div class="row form-line">
+			<label class="col-md-2">FIRST NAME </label>
+			<input class="col-md-6" [(ngModel)]="client.firstName" placeholder="First Name"/>
+		</div>
+		<div class="row form-line">
+			<label class="col-md-2">LAST NAME </label>
+			<input class="col-md-6" [(ngModel)]="client.lastName" placeholder="Last Name"/>
+		</div>
+		<div class="row form-line">
+			<label class="col-md-2">EMAIL* </label>
+			<input class="col-md-6" [(ngModel)]="client.email" placeholder="Email"/>
+		</div>
+		<div class="row form-line">
+			<label class="col-md-2">PHONE </label>
+			<input class="col-md-6" [(ngModel)]="client.phone" placeholder="(555)555-5555"/>
+		</div>
+		<div class="row form-line">
+			<label class="col-md-2">COUNTRY </label>
+			<select class="col-md-6" name="country" [(ngModel)]="client.country">
+				<option value="United States of America" selected>United States of America</option>
+				<option value="United Kingdom">United Kingdom</option>
+			</select>
+		</div>
+	</div>
+	<div class="col-md-6">
+		<div class="row form-line">
+			<label class="col-md-2">STYLIST </label>
+			<div class="row col-md-6">{{client.stylist}}</div>
+		</div>
+		<div class="row form-line">
+			<label class="col-md-2">STATUS </label>
+			<div class="row col-md-6">{{client.status}}</div>
+		</div>
+		<div class="row form-line">
+		  <div class="col-md-8">
+			<input type="checkbox" id="trackCustomer" name="track" value="false" [(ngModel)]="client.trackCustomer">
+			<label for="trackCustomer">TRACK CUSTOMER </label>
+		  </div>
+		</div>
+		<div class="row form-line">
+		  <div class="col-md-8">
+			<input type="checkbox" id="receivesInvoice" name="invoice" value="false" [(ngModel)]="client.receivesInvoice">
+			<label for="receivesInvoice">RECEIVES COPY OF INVOICE WITH SHIPMENT </label>
+		  </div>
+		</div>
+	</div>
+  </div>
+  <div class="row detail-section">
+    <div class="row col-md-6">
+	  	<label class="col-md-2">
+	  		PASSWORD
+	  	</label>
+	  	<div class="row col-md-6">
+	  	  <a href="/">Reset Password</a>
+	  	</div>
+  	</div>
+  </div>
+  <div class="row detail-section">
+  	<div class="row col-md-12">
+	  	<label class="col-md-1">
+	  		DAILY EMAILS
+	  	</label>
+	  	<form #f="ngForm" class="row col-md-10 form-line">
+	  	  <div class="row col-md-2">
+	  	  	<input type="radio" id="everyDay" name="dailyEmail" value="1" [(ngModel)]="client.dailyEmail">
+	  	  	<label for="everyDay">EVERY DAY</label>
+	  	  </div>
+	  	  <div class="row col-md-2">
+	  	  	<input type="radio" id="friSun" name="dailyEmail" value="3" [(ngModel)]="client.dailyEmail">
+	  	  	<label for="friSun">FRIDAY & SUNDAY</label>
+	  	  </div>
+	  	  <div class="row col-md-2">
+	  	  	<input type="radio" id="justFri" name="dailyEmail" value="2" [(ngModel)]="client.dailyEmail">
+	  	  	<label for="justFri">JUST FRIDAY</label>
+	  	  </div>
+	  	  <div class="row col-md-2">
+	  	  	<input type="radio" id="dailyUnsubscribe" name="dailyEmail" value="0" [(ngModel)]="client.dailyEmail">
+	  	  	<label for="dailyUnsubscribe">UNSUBSCRIBE</label>
+	  	  </div>
+	  	</form>
+  	</div>
+  	<div class="row col-md-12 form-line">
+	  	<label class="col-md-1">
+	  		SPECIAL ANNOUNCEMENTS
+	  	</label>
+	  	<div class="row col-md-10">
+	  	  <div class="row col-md-2">
+	  	  	<input type="radio" id="specialOn" name="specialEmail" [value]="true" [(ngModel)]="client.specialEmail">
+	  	  	<label for="specialOn">SUBSCRIBE</label>
+	  	  </div>
+	  	  <div class="row col-md-2">
+	  	  	<input type="radio" id="specialOff" name="specialEmail" [value]="false" [(ngModel)]="client.specialEmail">
+	  	  	<label for="specialOff">UNSUBSCRIBE</label>
+	  	  </div>
+	  	</div>
+  	</div>
+  	<div class="row col-md-12 form-line">
+	  	<label class="col-md-1">
+	  		SHOPPING BAG REMINDERS
+	  	</label>
+	  	<div class="row col-md-10">
+	  	  <div class="row col-md-2">
+	  	  	<input type="radio" id="everyDay" name="shoppingBagReminders" [value]="true" [(ngModel)]="client.shoppingBagEmail">
+	  	  	<label for="everyDay">SUBSCRIBE</label>
+	  	  </div>
+	  	  <div class="row col-md-2">
+	  	  	<input type="radio" id="everyDay" name="shoppingBagReminders" [value]="false" [(ngModel)]="client.shoppingBagEmail">
+	  	  	<label for="everyDay">UNSUBSCRIBE</label>
+	  	  </div>
+	  	</div>
+  	</div>
+  	<div class="row col-md-12 form-line">
+	  	<label class="col-md-1">
+	  		VIP COMMUNICATIONS
+	  	</label>
+	  	<div class="row col-md-10">
+	  	  <div class="row col-md-2">
+	  	  	<input type="radio" id="vipOn" name="vipCommunications" [value]="true" [(ngModel)]="client.vipEmail">
+	  	  	<label for="vipOn">SUBSCRIBE</label>
+	  	  </div>
+	  	  <div class="row col-md-2">
+	  	  	<input type="radio" id="vipOff" name="vipCommunications" [value]="false" [(ngModel)]="client.vipEmail">
+	  	  	<label for="vipOff">UNSUBSCRIBE</label>
+	  	  </div>
+	  	</div>
+  	</div>
+  	<div class="row col-md-12 form-line">
+	  	<label class="col-md-1">
+	  		DESIGNER ANNOUNCEMENTS
+	  	</label>
+	  	<div class="row col-md-10">
+	  	  <a (click)="clearDesigners()" class="form-line">Unsubscribe All</a>
+	  	  <div class="row col-md-12">
+	  	  	<div class="row col-md-2" *ngFor="let designer of client.designers">
+		  	  	<input type="checkbox" id="{{designer}}" checked="true">
+		  	  	<label for="{{designer}}" (click)="removeDesigner($event)">{{designer}}</label>
+	  	  	</div>
+	  	  </div>
+	  	  <form class="row col-md-12">
+				<input id="searchBox" type="text" class="col-md-3" name="designers" placeholder="Search for a designer" [(ngModel)]="inputValue" (ngModelChange)="onAutoComplete($event)">
+	  	  </form>
+	  	  <div id="searchResults" *ngFor="let match of matches">
+	  	  	<li>
+	  	  	  <a (click)="selectMatch(match)">{{match}}</a>
+	  	  	</li>
+	  	  </div>
+	  	</div>
+  	</div>
+  </div>
+</div>
