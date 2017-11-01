@@ -30,3 +30,7 @@ input[type="radio"] {
 a {
 	color: #A79294;
 }
+
+.first-column {
+	min-width: 220px;
+}

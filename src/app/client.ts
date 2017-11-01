@@ -15,10 +15,4 @@ export class Client {
 	shoppingBagEmail: boolean;
 	vipEmail: boolean;
 	designers: string[];
-}
-
-// daily email logic:
-// 0 = unsubscribe
-// 1 = every day
-// 2 = just friday
-// 3 = fri and sunday
+	}

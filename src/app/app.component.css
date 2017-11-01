@@ -1,9 +1,14 @@
-
+.client-container {
+  padding: 10px;
+}
 
 h1 {
-  color: #bdbdbd;
+  color: #3c1315;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 250%;
+  font-size: 200%;
+  margin-top: 20px;
+  padding: 10px 0 10px 0;
+  background-color: #f4e6e6;
 }
 
 
