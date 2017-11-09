@@ -41,6 +41,9 @@ a {
 
 .reco {
 	display: inline-block;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #BDBDBD;
 	float: none;
 	min-width: 200px;
 	padding-right: 10px;

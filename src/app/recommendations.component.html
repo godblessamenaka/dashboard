@@ -2,9 +2,9 @@
   <div class="form-line detail-section ">
     <label class="row col form-line" (click)="logIt()">RECOMMENDATIONS </label>
 
-	  	<div class="reco" *ngFor="let rec of fullRecs">
+	  	<div class="reco col-md-2" *ngFor="let rec of fullRecs">
 	  	  <p (click)="logIt()">{{rec.name}}</p>
-	  	  <img class="rec-img" src="{{rec.image}}">
+	  	  <a href="http://www.modaoperandi.com/{{rec.url}}"><img class="rec-img" src="{{rec.image}}"></a>
 	  	</div>
 
   </div>

@@ -50,7 +50,8 @@ export class RecommendationsComponent {
 				id: res.data.attributes.product_id, 
 				name: res.data.attributes.name,
 				image: res.data.attributes.variants_data[0].primary_image_urls.small_url,
-				description: res.data.attributes.description
+				description: res.data.attributes.description,
+				url: res.data.attributes.variants_data[0].href
 			});
 		});
 	}
