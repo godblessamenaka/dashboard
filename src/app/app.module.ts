@@ -1,17 +1,19 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, RadioControlValueAccessor }   from '@angular/forms'; // <-- NgModel lives here
-
+import { HttpModule }    from '@angular/http';
 import { AppComponent } from './app.component';
 import { ClientDetailComponent } from './client-detail.component';
+import { RecommendationsComponent } from './recommendations.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ClientDetailComponent
+    ClientDetailComponent,
+    RecommendationsComponent
   ],
   imports: [
-    BrowserModule, FormsModule
+    BrowserModule, FormsModule, HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]

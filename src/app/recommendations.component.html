@@ -1,0 +1,11 @@
+<div class="client-details" *ngIf="client">
+  <div class="form-line detail-section ">
+    <label class="row col form-line" (click)="logIt()">RECOMMENDATIONS </label>
+
+	  	<div class="reco" *ngFor="let rec of fullRecs">
+	  	  <p (click)="logIt()">{{rec.name}}</p>
+	  	  <img class="rec-img" src="{{rec.image}}">
+	  	</div>
+
+  </div>
+</div>

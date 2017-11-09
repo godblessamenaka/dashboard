@@ -1,16 +1,23 @@
 import { Component, Input, Output, OnChanges, EventEmitter } from '@angular/core';
 import { Client } from './client';
+import { ClientService } from './client.service';
 
 
 @Component({
   selector: 'client-detail',
   templateUrl: './client-detail.component.html',
-  styleUrls: ['./client-detail.component.css']
+  styleUrls: ['./client-detail.component.css'],
+  providers: [ ClientService ]
 })
 
 export class ClientDetailComponent {
 	@Input() client: Client;
 	@Output() onMatch: EventEmitter<any> = new EventEmitter();
+
+	constructor(
+		private clientService: ClientService
+	) {}
+
 
 	public allDesigners: string[] = ['A.L.C.','Alberta Ferretti', 'Alice McCall', 'Alison Lou', 'Acler','Adeam','Adriana Degreas','Dolce & Gabbana', 'Johanna Ortiz', 'Mansur Gavriel','Alberta Ferreti','Ellery','Monse','Brock Collection','Marni','Brandon Maxwell','Charlotte Olympia','Elie Saab'];
 	public matches: any = [];
@@ -50,6 +57,7 @@ export class ClientDetailComponent {
 
 	public removeDesigner(event) {
 	  let deselected = event.target.innerText;
+	  console.log(this);
 	  this.client.designers = this.client.designers.filter(function(designer) {
 		return designer != deselected
 	  });

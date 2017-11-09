@@ -1,19 +1,15 @@
 import { Injectable } from '@angular/core';
 import { Headers, Http } from '@angular/http';
 import { Client } from './client';
-import { CLIENTS } from './mock-clients';
 import 'rxjs/add/operator/toPromise';
 
 @Injectable()
-export class ClientService {
-	private recsUrl = 'https://morecs.modaoperandi.com/variants?user_id=';
-	private recInfoUrl = 'https://api-integration.modaoperandi.com/public/v3.3/variants/';
+export class RecommendationsService {
+	private recsUrl = `https://morecs.modaoperandi.com/variants?user_id=`
+	private recInfoUrl = `https://api-integration.modaoperandi.com/public/v3.3/variants/`;
 	private headers = new Headers ({'Content-Type': 'application/json'})
 	constructor(private http: Http) { };
-	
-	getClients(): Promise<Client[]> {
-		return Promise.resolve(CLIENTS);
-	}
+
 
 	getRecs(id: number): Promise<string[]> {
 		const recUrl = `${this.recsUrl}${id}`;
@@ -23,11 +19,12 @@ export class ClientService {
 			.catch(this.handleError);
 	}
 
-	getRecInfo(pid:string): Promise<any> {
-		const recInfo = `${this.recInfoUrl}${pid}`;
+	getRecInfo(rec: string): Promise<any> {
+		const recInfo = `${this.recInfoUrl}${rec}`;
 		return this.http.get(recInfo)
 			.toPromise()
-			.then(response => this.handleResponse(response.json()))
+			.then(response => response.json())
+			.catch(this.handleError);
 	}
 
 	private handleError(error: any): Promise<any> {
@@ -35,8 +32,5 @@ export class ClientService {
 		return Promise.reject(error.message || error);
 	}
 
-	private handleResponse(resp) {
-		console.log(resp);
-	}
 
 }

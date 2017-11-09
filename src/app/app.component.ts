@@ -26,11 +26,9 @@ export class AppComponent implements OnInit {
     this.getClients();
   }
 
-  logIt(): void {
-    console.log(this);
-  }
 
   onSelect(client: Client): void {
   	this.selectedClient = client;
+    console.log(this);
   }
 }
