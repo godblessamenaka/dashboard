@@ -1,1 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
+.button {
+	border-radius: 50px;
+	background-color: #f4e6e6;
+	padding: 20px;
+	border: none;
+}
+
+.button:hover {
+	box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.button:focus {
+	outline: none;
+
+}

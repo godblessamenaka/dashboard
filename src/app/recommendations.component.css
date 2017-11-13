@@ -52,6 +52,10 @@ a {
 	text-align: center;
 }
 
+.reco:hover {
+	box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
 .reco p {
 	min-height: 50px;
 	text-overflow: wrap;
