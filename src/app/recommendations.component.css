@@ -4,7 +4,6 @@
 	padding: 10px 0px 10px 10px;
 	font-size: 10px;
 	color: #343440;
-	font-family: 'Montserrat', sans-serif;
 }
 
 .client-details .form-line {
@@ -21,10 +20,9 @@
 	border-top-color: #BDBDBD;
 	padding-top: 30px;
 	padding-bottom: 20px;
-	overflow-x: auto;
-	overflow-y: hidden;
-	height: 300px;
-	white-space: nowrap;
+	flex-wrap: wrap;
+	width: 100%;
+	text-align: center;
 }
 
 input[type="radio"] {
@@ -38,21 +36,26 @@ a {
 .first-column {
 	min-width: 220px;
 }
-
+.recos {
+	text-align: center;
+}
 .reco {
 	display: inline-block;
 	border-width: 1px;
 	border-style: solid;
 	border-color: #BDBDBD;
-	float: none;
-	min-width: 200px;
-	padding-right: 10px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	width: 250px;
+	height: 300px;
+	padding: 25px;
 	text-align: center;
-	position: relative;
 }
 
-.reco * {
-	display: block;
+.reco p {
+	min-height: 50px;
+	text-overflow: wrap;
+	font-weight: bold;
 }
 
 

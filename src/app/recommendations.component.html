@@ -1,11 +1,15 @@
 <div class="client-details" *ngIf="client">
   <div class="form-line detail-section ">
-    <label class="row col form-line" (click)="logIt()">RECOMMENDATIONS </label>
+    <label class="form-line" (click)="logIt()">RECOMMENDATIONS </label>
 
-	  	<div class="reco col-md-2" *ngFor="let rec of fullRecs">
+ 	<div class="recos">
+	  	<div class="reco" *ngFor="let rec of fullRecs">
 	  	  <p (click)="logIt()">{{rec.name}}</p>
 	  	  <a href="http://www.modaoperandi.com/{{rec.url}}"><img class="rec-img" src="{{rec.image}}"></a>
+	  	  <p>${{rec.price}}</p>
 	  	</div>
+	  	<button class="" (click)="loadRecs(10)">LOAD MORE</button>
+	</div>
 
   </div>
 </div>
