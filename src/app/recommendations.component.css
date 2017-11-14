@@ -62,4 +62,8 @@ a {
 	font-weight: bold;
 }
 
+.reco img {
+	min-height: 180px;
+}
+
 

@@ -14,7 +14,7 @@ import { ClientService } from './client.service';
 export class AppComponent implements OnInit {
   title = 'Client Dashboard';
   clients: Client[];
-  selectedClient: Client;
+  selectedClient: any;
 
   constructor(private clientService: ClientService) { }
 
@@ -26,6 +26,14 @@ export class AppComponent implements OnInit {
     this.getClients();
   }
 
+  logIt(event): void {
+    console.log(event)
+  }
+
+  onSubmit(clientId): void {
+    this.selectedClient = {id: clientId}
+    console.log(this);
+  }
 
   onSelect(client: Client): void {
   	this.selectedClient = client;

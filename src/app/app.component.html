@@ -19,13 +19,13 @@
   <div class="client-container">
     <div class="clients">
       <form class="row col-md-12">
-        <input type="text" class="col-md-10" name="designers" placeholder="Search for a client" [(ngModel)]="inputValue" (ngModelChange)="logIt($event)">
+        <input type="text" class="col-md-10" name="designers" placeholder="Search for a client" [(ngModel)]="inputValue" (keyup)="$event.keyCode == 13 ? onSubmit($event.srcElement.value) : null">
       </form>
-          <div id="searchResults" *ngFor="let match of matches">
+          <!-- <div id="searchResults" *ngFor="let match of matches">
             <li>
               <a (click)="selectMatch(match)">{{match}}</a>
             </li>
-          </div>
+          </div> -->
       <ul class="clients">
         <li *ngFor="let client of clients"
           [class.selected]="client === selectedClient"

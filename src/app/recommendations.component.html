@@ -1,6 +1,6 @@
 <div class="client-details" *ngIf="client">
   <div class="form-line detail-section ">
-    <label class="form-line" (click)="logIt()">RECOMMENDATIONS </label>
+    <h1 class="form-line" (click)="logIt()">Recommendations </h1>
 
  	<div class="recos">
 	  	<div class="reco" *ngFor="let rec of fullRecs">
@@ -9,7 +9,7 @@
 	  	  <p>${{rec.price}}</p>
 	  	</div>
 	  	<br>
-	  	<button class="button" (click)="loadRecs(10)">LOAD MORE</button>
+	  	<button class="button" (click)="loadRecs(15)">LOAD MORE</button>
 	</div>
 
   </div>

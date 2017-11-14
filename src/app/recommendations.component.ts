@@ -12,7 +12,7 @@ import { RecommendationsService } from './recommendations.service'
 })
 
 export class RecommendationsComponent {
-	@Input() client: Client;
+	@Input() client: any;
 	recs: any[];
 	recInfo: any;
 	fullRecs: any[] = [];
