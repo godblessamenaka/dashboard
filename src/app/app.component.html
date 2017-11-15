@@ -19,7 +19,7 @@
   <div class="client-container">
     <div class="clients">
       <form class="row col-md-12">
-        <input type="text" class="col-md-10" name="designers" placeholder="Search for a client" [(ngModel)]="inputValue" (keyup)="$event.keyCode == 13 ? onSubmit($event.srcElement.value) : null">
+        <input type="text" class="col-md-10" name="designers" placeholder="Search by user ID" [(ngModel)]="inputValue" (keyup)="$event.keyCode == 13 ? onSubmit($event.srcElement.value) : null">
       </form>
           <!-- <div id="searchResults" *ngFor="let match of matches">
             <li>

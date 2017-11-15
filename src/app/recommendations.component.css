@@ -41,15 +41,27 @@ a {
 }
 .reco {
 	display: inline-block;
+	position: relative;
 	border-width: 1px;
 	border-style: solid;
 	border-color: #BDBDBD;
 	margin-right: 10px;
 	margin-bottom: 10px;
 	width: 250px;
-	height: 300px;
-	padding: 25px;
+	height: 340px;
+	padding: 10px;
 	text-align: center;
+}
+
+.unavailable {
+	opacity: .2;
+}
+
+.removeRec {
+	position: absolute;
+	display: inline;	
+	top: 10px;
+	right: 15px;
 }
 
 .reco:hover {
@@ -57,13 +69,18 @@ a {
 }
 
 .reco p {
-	min-height: 50px;
+	min-height: 40px;
 	text-overflow: wrap;
 	font-weight: bold;
 }
 
 .reco img {
 	min-height: 180px;
+}
+
+.reco .designer {
+	font-style: oblique;
+	font-weight: normal;
 }
 
 

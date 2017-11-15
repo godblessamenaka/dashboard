@@ -16,6 +16,7 @@ export class RecommendationsComponent {
 	recs: any[];
 	recInfo: any;
 	fullRecs: any[] = [];
+	currentDate: any;
 
 	constructor(
 		private recommendationsService: RecommendationsService
@@ -26,6 +27,7 @@ export class RecommendationsComponent {
 		this.fullRecs = [];
 		this.getRecs();
 		console.log(this);
+		this.currentDate = Date.now();
 	}
 
 	getRecs(): void {
@@ -55,13 +57,20 @@ export class RecommendationsComponent {
 				price: res.data.attributes.retail_price_usd,
 				image: res.data.attributes.variants_data[0].primary_image_urls.small_url,
 				description: res.data.attributes.description,
-				url: res.data.attributes.variants_data[0].href
+				url: res.data.attributes.variants_data[0].href,
+				designer: res.data.attributes.designer_names[0],
+				available: res.data.attributes.active_in_shop
 			});
 		});
 	}
 
-	logIt(): void {
-		console.log(this);
+	logIt(pid): void {
+		console.log(pid);
+	}
+
+	removeRec(rec): void {
+		this.recs = this.recs.filter(a => a !== parseInt(rec));
+		console.log(this.recs);
 	}
 
 
