@@ -15,4 +15,5 @@ export class Client {
 	shoppingBagEmail: boolean;
 	vipEmail: boolean;
 	designers: string[];
+	clientId: number;
 	}

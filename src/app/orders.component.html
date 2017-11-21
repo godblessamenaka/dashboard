@@ -1,0 +1,16 @@
+<div class="inline-grid col-md-6 orders" *ngIf="client">
+  <div class="form-line detail-section">
+    <h1 >Orders </h1>
+
+ 	<div class="tiles">
+	  	<div class="tile" *ngFor="let order of orderList">
+	  		<p>{{order.name}}</p>
+	  		<p class="designer">{{order.designer}}</p>
+	  		<a><img class="order-img" src="{{order.image}}"></a>
+	  		<p>${{order.price}}</p>
+	  	</div>
+	  	<br>
+	  	<button class="button">LOAD MORE</button>
+	</div>
+  </div>
+</div>

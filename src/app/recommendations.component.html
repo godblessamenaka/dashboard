@@ -1,12 +1,11 @@
-<div class="client-details" *ngIf="client">
+<div class="inline-grid col-md-6 recommendations" *ngIf="client">
   <div class="form-line detail-section ">
-    <h1 class="form-line" (click)="logIt()">Recommendations </h1>
+    <h1 (click)="logIt()">Recommendations </h1>
 
- 	<div class="recos">
-	  	<div class="reco" [ngClass]="{'unavailable': !rec.available}" *ngFor="let rec of fullRecs">
-<!-- 	  	  <div class="removeRec" (click)="removeRec(rec.id)">x</div>
- -->	  	  <p (click)="logIt()">{{rec.name}}</p>
- 			  <p class="designer">{{rec.designer}}</p>
+ 	<div class="tiles">
+	  	<div class="tile" [ngClass]="{'unavailable': !rec.available}" *ngFor="let rec of fullRecs">
+	  	  <p (click)="logIt()">{{rec.name}}</p>
+ 		  <p class="designer">{{rec.designer}}</p>
 	  	  <a href="http://www.modaoperandi.com/{{rec.url}}"><img class="rec-img" src="{{rec.image}}"></a>
 	  	  <p>${{rec.price}}</p>
 

@@ -13,3 +13,46 @@
 	outline: none;
 
 }
+
+.inline-grid {
+	display: inline-grid;
+}
+
+.tiles {
+	text-align: center;
+}
+.tile {
+	display: inline-grid;
+	position: relative;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #BDBDBD;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	width: 250px;
+	height: 340px;
+	padding: 10px;
+	text-align: center;
+}
+
+
+.tile:hover {
+	box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.tile p {
+	min-height: 40px;
+	text-overflow: wrap;
+	font-weight: bold;
+}
+
+.tile img {
+	height: 180px;
+}
+
+.tile .designer {
+	font-style: oblique;
+	font-weight: normal;
+}
+
+

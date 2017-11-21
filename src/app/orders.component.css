@@ -1,5 +1,7 @@
 
-
+.orders {
+	float:right;
+}
 
 .form-line {
 	padding-bottom: 10px;
@@ -16,8 +18,6 @@
 	text-align: center;
 }
 
-
-.unavailable {
-	opacity: .2;
+img {
+	text-align: center;
 }
-
