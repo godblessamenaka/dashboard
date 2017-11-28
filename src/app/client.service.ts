@@ -6,37 +6,27 @@ import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class ClientService {
-	private recsUrl = 'https://morecs.modaoperandi.com/variants?user_id=';
-	private recInfoUrl = 'https://api-integration.modaoperandi.com/public/v3.3/variants/';
-	private headers = new Headers ({'Content-Type': 'application/json'})
-	constructor(private http: Http) { };
-	
-	getClients(): Promise<Client[]> {
-		return Promise.resolve(CLIENTS);
-	}
+	private clientsUrl = 'https://moda-operandi-admin-stage.herokuapp.com/admin/stylist_portal/api/v1/clients';
 
-	getRecs(id: number): Promise<string[]> {
-		const recUrl = `${this.recsUrl}${id}`;
-		return this.http.get(recUrl)
+	private headers = new Headers ({'Content-Type': 'application/json', 'Authorization': 'Bearer 97e904aae0ee89dafe63ed45781f715e0b5bc239728d7f5333ad3c52cbb0535d'})
+
+	constructor(private http: Http) { };
+
+	getClients(): Promise<any[]> {
+		const clientUrl = `${this.clientsUrl}`;
+		return this.http.get(clientUrl, { headers: this.headers})
 			.toPromise()
 			.then(response => response.json())
 			.catch(this.handleError);
 	}
-
-	getRecInfo(pid:string): Promise<any> {
-		const recInfo = `${this.recInfoUrl}${pid}`;
-		return this.http.get(recInfo)
-			.toPromise()
-			.then(response => this.handleResponse(response.json()))
-	}
+	
+	// getClients(): Promise<Client[]> {
+	// 	return Promise.resolve(CLIENTS);
+	// }
 
 	private handleError(error: any): Promise<any> {
 		console.error('An error occurred', error);
 		return Promise.reject(error.message || error);
-	}
-
-	private handleResponse(resp) {
-		console.log(resp);
 	}
 
 }

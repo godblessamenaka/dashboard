@@ -15,11 +15,23 @@ export class AppComponent implements OnInit {
   title = 'Client Dashboard';
   clients: Client[];
   selectedClient: any;
+  property: string;
 
   constructor(private clientService: ClientService) { }
 
+  dynamicSort(property) {
+    var sortOrder = 1;
+    if(property[0] === "-") {
+        sortOrder = -1;
+        property = property.substr(1);
+    }
+    return function (a,b) {
+        var result = (a[property] < b[property]) ? -1 : (a[property] > b[property]) ? 1 : 0;
+        return result * sortOrder;
+    }
+  }
   getClients(): void {
-    this.clientService.getClients().then(clients => this.clients = clients);
+    this.clientService.getClients().then(clients => this.clients = clients.sort(this.dynamicSort("id")));
   }
 
   ngOnInit(): void {
@@ -35,8 +47,13 @@ export class AppComponent implements OnInit {
     console.log(this);
   }
 
-  onSelect(client: Client): void {
+  onSelectClient(client: Client): void {
   	this.selectedClient = client;
+    console.log(this);
+  }
+
+  onSelectSort(sortyByProperty: string): void {
+    this.sortBy = sortByProperty;
     console.log(this);
   }
 }

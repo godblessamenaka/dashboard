@@ -1,7 +1,5 @@
-<div class="inline-grid col-md-6 recommendations" *ngIf="client">
+<div class="inline-grid recommendations" *ngIf="client">
   <div class="form-line detail-section ">
-    <h1 (click)="logIt()">Recommendations </h1>
-
  	<div class="tiles">
 	  	<div class="tile" [ngClass]="{'unavailable': !rec.available}" *ngFor="let rec of fullRecs">
 	  	  <p (click)="logIt()">{{rec.name}}</p>

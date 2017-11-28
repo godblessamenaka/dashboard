@@ -11,10 +11,9 @@ import { RecommendationsService } from './recommendations.service'
   providers: [ RecommendationsService ]
 })
 
-export class RecommendationsComponent {
+export class RecommendationsComponent implements OnChanges{
 	@Input() client: any;
-	recs: any[];
-	recInfo: any;
+	recs: any[] = [];
 	fullRecs: any[] = [];
 	currentDate: any;
 
@@ -24,7 +23,8 @@ export class RecommendationsComponent {
 
 
 	ngOnChanges(): void {
-		this.fullRecs = [];
+		// this.fullRecs = [];
+		// this.recs = [];
 		this.getRecs();
 		console.log(this);
 		this.currentDate = Date.now();
@@ -48,10 +48,9 @@ export class RecommendationsComponent {
 	}
 
 	getRecInfo(rec): any {
-		var self = this;
 		
 		this.recommendationsService.getRecInfo(rec).then(res => {
-			self.fullRecs.push({
+			this.fullRecs.push({
 				id: res.data.attributes.product_id, 
 				name: res.data.attributes.name,
 				price: res.data.attributes.retail_price_usd,
@@ -68,10 +67,6 @@ export class RecommendationsComponent {
 		console.log(pid);
 	}
 
-	removeRec(rec): void {
-		this.recs = this.recs.filter(a => a !== parseInt(rec));
-		console.log(this.recs);
-	}
 
 
 }

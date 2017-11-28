@@ -8,7 +8,7 @@ export class OrdersService {
 	private ordersUrl = `https://pink.adminmoda.com/admin/stylist_portal/api/v1/orders?user_id=`;
 	private orderInfoUrl = `https://api-integration.modaoperandi.com/public/v3.3/variants/`;
 
-	private headers = new Headers ({'Content-Type': 'application/json', 'Authorization': 'Bearer e92bf7088a11c2b07caf54b60a7561e22a0ff7ccf061ad1fa2e701f4c066b980'});
+	private headers = new Headers ({'Content-Type': 'application/json', 'Authorization': 'Bearer 9be453ffe1a763f83bdbd4899e64aa13f46a56bc80c5ccc703280b575c2ca7de'});
 	constructor(private http: Http) { };
 
 

@@ -15,7 +15,7 @@ export class OrdersComponent {
 	@Input() client: any;
 	orders: any[];
 	orderItems: any[];
-	orderList: any[];
+	orderList: any[] = [];
 
 	constructor(
 		private ordersService: OrdersService

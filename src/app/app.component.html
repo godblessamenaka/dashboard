@@ -18,25 +18,39 @@
   </div>
   <div class="client-container">
     <div class="clients">
-      <form class="row col-md-12">
-        <input type="text" class="col-md-10" name="designers" placeholder="Search by user ID" [(ngModel)]="inputValue" (keyup)="$event.keyCode == 13 ? onSubmit($event.srcElement.value) : null">
-      </form>
+      <div class="row col-md-12">
+        <input type="text" class="col-md-2" name="clients" placeholder="Search by user ID" (keyup)="$event.keyCode == 13 ? onSubmit($event.srcElement.value) : null">
+          <select [value]="selected" (click)="onSelectSort('id')">
+            <option>None</option>
+            <option value="ID">Option 1</option>
+            <option value="Name">Option 2</option>
+          </select>
+      </div>
+
+
           <!-- <div id="searchResults" *ngFor="let match of matches">
             <li>
               <a (click)="selectMatch(match)">{{match}}</a>
             </li>
           </div> -->
-      <ul class="clients">
-        <li *ngFor="let client of clients"
+      <ul class="client-list">
+        <li class="col-md-2" *ngFor="let client of clients"
           [class.selected]="client === selectedClient"
-          (click)="onSelect(client)">
-          <span class="badge">{{client.id}}</span> {{client.firstName}}
+          (click)="onSelectClient(client)">
+          <span class="badge">{{client.id}}</span> {{client.full_name}}
         </li>
       </ul>
     </div>
+    <mat-tab-group>
+    <mat-tab label="Recommendations">
     <recommendations [client]="selectedClient"></recommendations>
+    </mat-tab>
+    <mat-tab label="Orders">
     <orders [client]="selectedClient"></orders>
+    </mat-tab>
+    </mat-tab-group>
     <client-detail [client]="selectedClient"></client-detail>
+    
   </div>
 
 </div>

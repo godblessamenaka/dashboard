@@ -1,7 +1,5 @@
-<div class="inline-grid col-md-6 orders" *ngIf="client">
+<div class="orders" *ngIf="client">
   <div class="form-line detail-section">
-    <h1 >Orders </h1>
-
  	<div class="tiles">
 	  	<div class="tile" *ngFor="let order of orderList">
 	  		<p>{{order.name}}</p>

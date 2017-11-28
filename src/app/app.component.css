@@ -77,10 +77,19 @@ input:checked + .slider:before {
   margin: 0 0 2em 0;
   list-style-type: none;
   padding: 0;
-  width: 15em;
   -webkit-box-sizing: content-box;
      -moz-box-sizing: content-box;
           box-sizing: content-box;
+}
+
+.client-list {
+  list-style-type: none;
+  padding: 0;
+  flex-wrap: wrap;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  display: -webkit-flex;
+  overflow: wrap;
 }
 .clients li {
   cursor: pointer;
@@ -113,6 +122,7 @@ input:checked + .slider:before {
   background-color: #3c1315;
   line-height: 1em;
   position: relative;
+  width: 4em;
   left: -1px;
   top: -4px;
   height: 1.8em;

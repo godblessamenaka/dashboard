@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { ClientDetailComponent } from './client-detail.component';
 import { RecommendationsComponent } from './recommendations.component';
 import { OrdersComponent } from './orders.component';
+import { MatTabsModule } from '@angular/material/tabs';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -16,7 +18,7 @@ import { OrdersComponent } from './orders.component';
     OrdersComponent,
   ],
   imports: [
-    BrowserModule, FormsModule, HttpModule
+    BrowserModule, FormsModule, HttpModule, MatTabsModule, BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
