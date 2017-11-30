@@ -34,6 +34,11 @@ export class AppComponent implements OnInit {
     this.clientService.getClients().then(clients => this.clients = clients.sort(this.dynamicSort("id")));
   }
 
+  getClientsBy(property): void {
+    this.clients.sort(this.dynamicSort(property))
+    console.log(property)
+  }
+
   ngOnInit(): void {
     this.getClients();
   }
@@ -52,8 +57,7 @@ export class AppComponent implements OnInit {
     console.log(this);
   }
 
-  onSelectSort(sortyByProperty: string): void {
-    this.sortBy = sortByProperty;
-    console.log(this);
+  onSelectSort(event): void {
+    console.log(event);
   }
 }

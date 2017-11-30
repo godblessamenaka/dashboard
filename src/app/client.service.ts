@@ -8,7 +8,7 @@ import 'rxjs/add/operator/toPromise';
 export class ClientService {
 	private clientsUrl = 'https://moda-operandi-admin-stage.herokuapp.com/admin/stylist_portal/api/v1/clients';
 
-	private headers = new Headers ({'Content-Type': 'application/json', 'Authorization': 'Bearer 97e904aae0ee89dafe63ed45781f715e0b5bc239728d7f5333ad3c52cbb0535d'})
+	private headers = new Headers ({'Content-Type': 'application/json', 'Authorization': 'Bearer 9f83725de11eac54e1b01ff6c64f43779a3d8859b17379dd2ecef048fab02884'})
 
 	constructor(private http: Http) { };
 

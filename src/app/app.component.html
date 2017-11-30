@@ -20,10 +20,10 @@
     <div class="clients">
       <div class="row col-md-12">
         <input type="text" class="col-md-2" name="clients" placeholder="Search by user ID" (keyup)="$event.keyCode == 13 ? onSubmit($event.srcElement.value) : null">
-          <select [value]="selected" (click)="onSelectSort('id')">
-            <option>None</option>
-            <option value="ID">Option 1</option>
-            <option value="Name">Option 2</option>
+          <select [value]="selected" (change)="getClientsBy($event.srcElement.value)">
+            <option value="id">ID</option>
+            <option value="Tier">Tier</option>
+            <option value="full_name">Full Name</option>
           </select>
       </div>
 
