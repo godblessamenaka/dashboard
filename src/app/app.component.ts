@@ -57,7 +57,5 @@ export class AppComponent implements OnInit {
     console.log(this);
   }
 
-  onSelectSort(event): void {
-    console.log(event);
-  }
+
 }

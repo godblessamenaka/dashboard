@@ -18,13 +18,16 @@
   </div>
   <div class="client-container">
     <div class="clients">
-      <div class="row col-md-12">
+      <div class="row col-md-12 justify-content-between inputs">
         <input type="text" class="col-md-2" name="clients" placeholder="Search by user ID" (keyup)="$event.keyCode == 13 ? onSubmit($event.srcElement.value) : null">
-          <select [value]="selected" (change)="getClientsBy($event.srcElement.value)">
-            <option value="id">ID</option>
-            <option value="Tier">Tier</option>
-            <option value="full_name">Full Name</option>
-          </select>
+        <div class="sortBy">
+        Sort By:
+        <select class="sortByDropdown" [value]="selected" (change)="getClientsBy($event.srcElement.value)">
+          <option value="id">ID</option>
+          <option value="Tier">Tier</option>
+          <option value="full_name">Full Name</option>
+        </select>
+        </div>
       </div>
 
 
